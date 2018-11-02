@@ -25,16 +25,16 @@ This document will introduce and refer to following terms "Deployment", "Service
 ## YAML syntax
 
 ## yaml with deployment key literal. This will indicate the job type will be deployment type.
-jobs:
+```jobs:
  deployment: deployWebPkg
  
  pool:
   vmImage: 'Ubuntu 16.04'
- 
+ ```
  
 
 ## yaml with environment key literal. Tracks deployment against the specified environment.
-jobs:
+```jobs:
  
  deployment: deployWebPkg
  
@@ -49,9 +49,10 @@ jobs:
    inputs:
      appServiceName: “myWebApp”
      slot: staging
+```
 
 ## yaml with servicegroup key literal. Tracks deployment against the specified servicegroup within the environment.
-jobs:
+```jobs:
 
  deployment: deployWebPkg
 
@@ -69,10 +70,10 @@ jobs:
      appServiceName: “myWebApp”
      connection: "myAzureSubscription"
      slot: staging
-
+```
 
 ## environment and servicegroup variables available for step inputs
-jobs:
+```jobs:
 
  deployment: deployWebPkg
 
@@ -90,4 +91,4 @@ jobs:
      appServiceName: $(environment.servicegroup)
      connection: $(environment.servicegroup.connection)
      slot: staging
-
+```
