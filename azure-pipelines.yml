@@ -5,7 +5,7 @@
 
 jobs:
   - deployment: Aksjob
-    environment: muthuk-aks1
+    environment: muthuk-aks1.default
     pool: default
     strategy:
       runOnce:
