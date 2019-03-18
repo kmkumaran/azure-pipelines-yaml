@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+jobs:
+  - deployment: Aksjob
+    environment: muthuk-aks1
+    pool: default
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+           - script: echo Hello, world!
+             displayName: 'Run a one-line script'
+           - task: Kubernetes@1
+             displayName: 'kubectl get'
+             inputs:
+              connectionType: 'Kubernetes Service Connection'
+              kubernetesServiceEndpoint: default
+              namespace: 'default'
+              command: get
+              arguments: pods
+
