@@ -5,7 +5,7 @@
 
 jobs:
   - deployment: Aksjob
-    environment: muthuk-aks1.default
+    environment: Muthuk-SimpleTracing
     pool: default
     strategy:
       runOnce:
