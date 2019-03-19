@@ -6,7 +6,7 @@
 jobs:
   - deployment: Aksjob
     environment: Muthuk-SimpleTracing
-    pool: default
+    pool: prodpool
     strategy:
       runOnce:
         deploy:
